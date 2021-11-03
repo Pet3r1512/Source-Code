@@ -19,7 +19,7 @@ public class Cau3 {
                 if(expression[i].equals("+")){
                     int o1 = newStack.pop();
                     int o2 = newStack.pop();
-                    int o3 = o2 - o1;
+                    int o3 = o2 + o1;
                     newStack.push(o3);
                 }
                 if(expression[i].equals("-")){
