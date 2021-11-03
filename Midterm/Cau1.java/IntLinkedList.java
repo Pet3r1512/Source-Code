@@ -51,6 +51,7 @@ public class IntLinkedList implements ListInterface{
             if(curr.getData() == key){
                 tmp.setNext(curr.getNext());
                 curr.setNext(tmp);
+                return true;
             }
         }
         return false;
