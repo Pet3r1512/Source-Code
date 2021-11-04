@@ -108,7 +108,6 @@ public class IntLinkedList implements ListInterface{
         if(head == null){
             throw new NoSuchElementException("Can't remove from an empty list");
         }
-        Node tmp = head;
         head = head.getNext();
         numNode--;
     }
