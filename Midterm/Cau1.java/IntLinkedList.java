@@ -88,4 +88,43 @@ public class IntLinkedList implements ListInterface{
             curr = curr.getNext();
         }
     }
+    
+    @Override
+    public void removeAfter(int curr){
+        if(head == null){
+            throw new NoSuchElementException("The list is empty");
+        }
+        Node tmp = head;
+        while(tmp.getNext() != null){
+            if(tmp.getData() == curr){
+                tmp.setNext(tmp.getNext().getNext());
+            }
+            tmp = tmp.getNext();
+        }
+    }
+
+    @Override
+    public void removeFirst(){
+        if(head == null){
+            throw new NoSuchElementException("Can't remove from an empty list");
+        }
+        Node tmp = head;
+        head = head.getNext();
+        numNode--;
+    }
+
+    @Override
+    public void removeLast(){
+        if(head == null){
+            throw new NoSuchElementException("Can't remove from an empty list");
+        }
+        Node delNode = head, preNode = null;
+        while(delNode.getNext() != null){
+            preNode = delNode;
+            delNode = delNode.getNext();
+        }
+        preNode.setNext(delNode.getNext());
+        delNode.setNext(null);
+        numNode--;
+    }
 }
