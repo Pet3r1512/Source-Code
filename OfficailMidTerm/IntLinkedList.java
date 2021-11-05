@@ -39,7 +39,7 @@ public class IntLinkedList implements ListInterface{
         }
         Node tmp = head;
         int count = 0;
-        while(tmp.getNext() != null){
+        while(tmp != null){
             if(tmp.getData() < key){
                 count++;
             }
